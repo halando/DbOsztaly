@@ -24,4 +24,28 @@ class PubController extends Controller
     echo "<pre>";
     print_r($name);
 }
+public function insertDrink(){
+    DB::insert("INSERT INTO  drinks(name,amount,typeid,quantityid)
+    VALUES (?,?,?,?)",[
+        "Barack pálinka",
+        20,
+        3,
+        1
+    ]);
+}
+public function modifyDrink(){
+
+    $drink =DB::update("UPDATE drinks SET amount = ?
+    WHERE did = ?",[
+        12,8
+    ]);
+    print_r($drink);
+}
+public function removeDrink(){
+$drink = DB::delete("DELETE FROM drinks WHERE did = ?",
+[
+    8
+]);
+print_r($drink);
+}
 }

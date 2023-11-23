@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 Route::get("/drinks",[PubController::class, "getDrinks"]);
 Route::get("/name",[PubController::class, "getName"]);
+Route::get("/insert",[PubController::class, "insertDrink"]);
+Route::get("/modify",[PubController::class, "modifyDrink"]);
+Route::get("/remove", [PubController::class, "removeDrink"]);
